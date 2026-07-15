@@ -4,7 +4,9 @@
 
 ### An Open-Source 3D Storytelling Engine for React and Next.js
 
-A reusable 3D web experience engine that enables developers to build immersive scroll-driven websites with animated 3D scenes, interactive models, cinematic camera movements, and modern WebGL experiences.
+A reusable npm library for building immersive 3D web experiences with scroll-driven storytelling, animated scenes, interactive 3D models, cinematic camera movements, and WebGL-powered experiences.
+
+Built for developers who want to create modern interactive websites without rebuilding complex Three.js systems from scratch.
 
 <br/>
 
@@ -12,10 +14,10 @@ A reusable 3D web experience engine that enables developers to build immersive s
 ![Version](https://img.shields.io/badge/Version-v0.1.0-blue?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![Platform](https://img.shields.io/badge/Platform-React%20%7C%20Next.js-lightgrey?style=for-the-badge)
+![NPM](https://img.shields.io/badge/Package-NPM-red?style=for-the-badge)
 ![WebGL](https://img.shields.io/badge/Technology-WebGL-orange?style=for-the-badge)
 ![Documentation](https://img.shields.io/badge/Documentation-In%20Progress-blueviolet?style=for-the-badge)
 
-<br/>
 <br/>
 
 # Technology Stack
@@ -36,48 +38,76 @@ A reusable 3D web experience engine that enables developers to build immersive s
 
 - [Overview](#overview)
 - [Vision](#vision)
+- [Why This Project](#why-this-project)
 - [Core Features](#core-features)
-- [Technology Stack](#technology-stack)
 - [Architecture](#architecture)
-- [Getting Started](#getting-started)
+- [Library Structure](#library-structure)
+- [Domain Components](#domain-components)
+- [Technology Stack](#technology-stack)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Examples](#examples)
 - [Development](#development)
 - [Contribution Guidelines](#contribution-guidelines)
 - [Roadmap](#roadmap)
 - [License](#license)
+- [Support](#support)
 
 ---
 
 # Overview
 
-**3D Scroll Story Engine** is an open-source framework for creating immersive 3D scrolling experiences in React and Next.js applications.
+**3D Scroll Story Engine** is an open-source npm library that helps developers build cinematic 3D scrolling experiences using React and Next.js.
 
-The goal is to simplify the process of building cinematic websites similar to modern product pages where users scroll through animated scenes, interactive 3D models, and dynamic visual storytelling.
+The library provides reusable components, hooks, animation systems, and industry-focused presets that allow developers to create experiences similar to modern interactive product websites.
 
-The engine provides reusable components and systems for:
+The goal is to make advanced WebGL storytelling easier, faster, and more accessible.
+
+The engine provides systems for:
 
 - 3D scene management
-- Scroll-based animations
-- Camera transitions
+- Scroll-driven animations
+- Camera choreography
 - Interactive models
-- Timeline-based storytelling
+- Timeline storytelling
+- Scene transitions
 - Performance optimization
+- Reusable business components
 
 ---
 
 # Vision
 
-Build a developer-friendly open-source engine that makes advanced 3D web experiences accessible without requiring developers to build complex WebGL systems from scratch.
+The vision of this project is to create a universal framework for interactive 3D experiences on the web.
 
-The project aims to become a reusable foundation for:
+Instead of every developer creating custom Three.js solutions, this library provides a shared foundation that can be extended by the community.
 
-- Interactive landing pages
-- Product showcases
-- Digital experiences
-- Educational platforms
-- Marketing websites
-- Virtual storytelling experiences
+The project aims to support:
+
+- Product launch websites
+- Automotive experiences
+- Ecommerce platforms
+- Architecture visualization
+- Education platforms
+- Creative portfolios
+- Digital storytelling
+- Virtual experiences
+
+---
+
+# Why This Project
+
+Building high-quality 3D web experiences normally requires:
+
+- Deep Three.js knowledge
+- Custom animation systems
+- Complex camera logic
+- Performance optimization
+- Scene management
+
+3D Scroll Story Engine abstracts these challenges into reusable components.
+
+Developers can focus on creating experiences instead of rebuilding infrastructure.
 
 ---
 
@@ -85,71 +115,517 @@ The project aims to become a reusable foundation for:
 
 ## 3D Scene Engine
 
-- Three.js powered rendering
-- React and Next.js support
-- Component-based 3D scenes
-- Reusable scene architecture
+A complete scene management system.
+
+Features:
+
+- Three.js rendering
+- React component architecture
+- Scene lifecycle handling
+- Lighting management
+- Environment configuration
+- Object management
+
+
+Example:
+
+```tsx
+<StoryScene>
+
+  <CameraRig />
+
+  <ModelViewer
+    model="/product.glb"
+  />
+
+</StoryScene>
+````
 
 ---
 
-## Scroll Storytelling
+# Scroll Story System
 
-- Scroll-controlled animations
-- Camera movement based on scroll position
-- Scene transitions
-- Timeline-based experiences
+Transforms user scrolling into cinematic animations.
+
+Features:
+
+* Scroll progress tracking
+* Camera movement
+* Object animation
+* Scene transitions
+* Timeline synchronization
+
+Architecture:
+
+```
+User Scroll
+
+      ↓
+
+Scroll Controller
+
+      ↓
+
+Timeline Engine
+
+      ↓
+
+Camera Animation
+
+      ↓
+
+3D Scene Changes
+```
 
 ---
 
-## 3D Model Support
+# 3D Model System
 
-- GLB / GLTF loading
-- Model positioning
-- Object animations
-- Material control
+Supports modern 3D assets.
+
+Supported:
+
+* GLB
+* GLTF
+* Animated models
+* Custom materials
+* Multiple scenes
+
+Features:
+
+* Lazy loading
+* Model caching
+* Animation control
+* Position control
 
 ---
 
-## Animation System
+# Animation Engine
 
-- Smooth camera animations
-- Object transformations
-- Fade transitions
-- Custom animation hooks
+Provides smooth animations.
+
+Supports:
+
+* Camera movement
+* Rotation
+* Position changes
+* Scaling
+* Opacity transitions
+* Timeline sequences
 
 ---
 
-## Developer Experience
+# Developer Experience
 
-- Simple React components
-- TypeScript support
-- Extensible architecture
-- Plugin-based future system
+Designed as a professional npm package.
+
+Features:
+
+* React components
+* Next.js support
+* TypeScript support
+* Hooks API
+* Preset experiences
+* Plugin architecture
+
+---
+
+# Architecture
+
+The project uses a modular architecture.
+
+```
+3d-scroll-story-engine
+
+│
+├── core
+│   ├── Scene Engine
+│   ├── Camera System
+│   ├── Scroll Controller
+│   ├── Animation Timeline
+│   └── Performance Manager
+│
+├── components
+│   ├── StoryScene
+│   ├── CameraRig
+│   ├── ScrollContainer
+│   ├── ModelViewer
+│   ├── AnimatedObject
+│   └── SceneTransition
+│
+├── hooks
+│   ├── useScrollProgress
+│   ├── useTimeline
+│   ├── useCamera
+│   ├── useModel
+│   └── usePerformance
+│
+├── presets
+│   ├── ProductShowcase
+│   ├── LandingPage
+│   ├── Portfolio
+│   └── MarketingExperience
+│
+├── domains
+│   ├── Automotive
+│   ├── Ecommerce
+│   ├── RealEstate
+│   ├── Education
+│   └── Creative
+│
+├── plugins
+│   ├── Physics
+│   ├── AI Tools
+│   ├── VR Support
+│   └── Extensions
+│
+└── adapters
+    ├── React
+    └── Next.js
+```
+
+---
+
+# Library Structure
+
+After installation:
+
+```bash
+npm install 3d-scroll-story-engine
+```
+
+Developers can import ready components:
+
+```tsx
+import {
+ StoryScene,
+ CameraRig,
+ ScrollContainer,
+ ProductStory
+}
+from "3d-scroll-story-engine";
+```
+
+---
+
+# Domain Components
+
+The library provides reusable solutions for different industries.
+
+---
+
+## Automotive
+
+Components:
+
+```
+VehicleShowcase
+CarConfigurator
+DrivingExperience
+```
+
+Use cases:
+
+* Vehicle launches
+* Digital showrooms
+* Car customization
+
+---
+
+## Ecommerce
+
+Components:
+
+```
+ProductViewer
+ProductStory
+InteractiveProduct
+```
+
+Use cases:
+
+* Product demonstrations
+* Luxury shopping
+* Interactive previews
+
+---
+
+## Real Estate
+
+Components:
+
+```
+VirtualTour
+BuildingExplorer
+ArchitectureScene
+```
+
+Use cases:
+
+* Property tours
+* Architecture visualization
+* Smart cities
+
+---
+
+## Education
+
+Components:
+
+```
+InteractiveLesson
+ScientificModel
+LearningScene
+```
+
+Use cases:
+
+* 3D education
+* Training systems
+* Simulations
+
+---
+
+## Creative
+
+Components:
+
+```
+DigitalGallery
+PortfolioExperience
+ArtScene
+```
+
+Use cases:
+
+* Portfolios
+* Digital exhibitions
+* Creative storytelling
 
 ---
 
 # Technology Stack
 
-## Core Engine
-
-| Technology | Purpose |
-|---|---|
-| Three.js | 3D rendering engine |
-| React Three Fiber | React renderer for Three.js |
-| Drei | Three.js helper components |
-| GSAP | Advanced animations |
-| WebGL | GPU-powered graphics |
-
----
-
-## Supported Frameworks
-
-| Framework | Support |
-|---|---|
-| React | Supported |
-| Next.js | Supported |
-| TypeScript | Supported |
+| Technology        | Purpose              |
+| ----------------- | -------------------- |
+| Three.js          | 3D rendering         |
+| React Three Fiber | React WebGL renderer |
+| Drei              | Three.js utilities   |
+| GSAP              | Animation engine     |
+| WebGL             | Graphics processing  |
+| TypeScript        | Type safety          |
 
 ---
 
-# Architecture
+# Installation
+
+Using npm:
+
+```bash
+npm install 3d-scroll-story-engine
+```
+
+Using yarn:
+
+```bash
+yarn add 3d-scroll-story-engine
+```
+
+Using pnpm:
+
+```bash
+pnpm add 3d-scroll-story-engine
+```
+
+---
+
+# Usage
+
+Basic example:
+
+```tsx
+import {
+ ScrollContainer,
+ StoryScene,
+ CameraRig
+}
+from "3d-scroll-story-engine";
+
+
+export default function Page(){
+
+return (
+
+<ScrollContainer>
+
+<StoryScene>
+
+<CameraRig />
+
+</StoryScene>
+
+</ScrollContainer>
+
+)
+
+}
+```
+
+---
+
+# Examples
+
+## Product Experience
+
+```tsx
+<ProductStory
+
+model="/product.glb"
+
+animation="cinematic"
+
+/>
+```
+
+---
+
+## Vehicle Experience
+
+```tsx
+<VehicleShowcase
+
+model="/vehicle.glb"
+
+camera="dynamic"
+
+/>
+```
+
+---
+
+## Virtual Tour
+
+```tsx
+<VirtualTour
+
+building="/building.glb"
+
+/>
+```
+
+---
+
+# Development
+
+Clone repository:
+
+```bash
+git clone https://github.com/your-name/3d-scroll-story-engine.git
+```
+
+Install:
+
+```bash
+npm install
+```
+
+Run:
+
+```bash
+npm run dev
+```
+
+Build:
+
+```bash
+npm run build
+```
+
+---
+
+# Contribution Guidelines
+
+Contributions are welcome.
+
+You can contribute:
+
+* New components
+* New business domains
+* New animations
+* Performance improvements
+* Documentation
+* Examples
+
+## Workflow
+
+Create branch:
+
+```bash
+git checkout -b feature/new-component
+```
+
+Commit:
+
+```bash
+git commit -m "feat: add new component"
+```
+
+Push:
+
+```bash
+git push origin feature/new-component
+```
+
+Create Pull Request.
+
+---
+
+# Roadmap
+
+## Version 0.1
+
+* Core engine
+* Scroll animations
+* Camera system
+* React support
+
+## Version 0.5
+
+* Domain components
+* Preset experiences
+* Better documentation
+
+## Version 1.0
+
+* Plugin marketplace
+* AI scene generation
+* VR support
+* Community extensions
+
+---
+
+# License
+
+MIT License.
+
+This project can be used commercially, modified, and distributed.
+
+---
+
+# Support
+
+For help:
+
+* Open GitHub issues
+* Request features
+* Submit pull requests
+* Join discussions
+
+---
+
+<div align="center">
+
+### Building the future of interactive 3D experiences on the web.
+
+</div>
+
