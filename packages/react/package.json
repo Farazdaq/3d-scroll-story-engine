@@ -1,0 +1,16 @@
+{
+  "name": "@3d-scroll/react",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "dependencies": {
+    "@3d-scroll/core": "workspace:*",
+    "react": "latest",
+    "react-dom": "latest",
+    "three": "latest",
+    "@react-three/fiber": "latest",
+    "@react-three/drei": "latest",
+    "gsap": "latest"
+  }
+}

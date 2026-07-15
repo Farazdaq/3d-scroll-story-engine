@@ -1,0 +1,8 @@
+{
+  "name": "react-demo",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@3d-scroll/react": "workspace:*"
+  }
+}
